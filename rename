@@ -1,0 +1,16 @@
+import os
+
+def batch_rename(folder_path, prefix):
+    for idx, filename in enumerate(os.listdir(folder_path)):
+        ext = os.path.splitext(filename)[1]
+        new_name = f"{prefix}_{idx}{ext}"
+        os.rename(
+            os.path.join(folder_path, filename),
+            os.path.join(folder_path, new_name)
+        )
+
+if __name__ == "__main__":
+    folder = input("Enter the folder path: ")
+    prefix = input("Enter the prefix for renaming: ")
+    batch_rename(folder, prefix)
+    print("Renaming completed.")
