@@ -1,0 +1,12 @@
+import random
+
+def roll_dice(sides=6):
+    return random.randint(1, sides)
+
+if __name__ == "__main__":
+    while True:
+        sides = int(input("Enter the number of sides on the dice (or 0 to quit): "))
+        if sides <= 0:
+            print("Goodbye!")
+            break
+        print(f"You rolled a {roll_dice(sides)}!")
