@@ -1,0 +1,11 @@
+# Read a text file and print its content
+def read_file(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            for line in file:
+                print(line.strip())
+    except FileNotFoundError:
+        print("File not found!")
+
+# Example usage
+# read_file('example.txt')
